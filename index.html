@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<h1>Psychic Game</h1>
+
+<p>Guess What Letter I'm Thinking Of</p>
+
+<p>Wins: <span id="numWins"></span></p>
+
+<p>Losses: <span id="numLosses"></span></p>
+
+<p>Guesses Left: <span id="numGuessesLeft"></span></p>
+
+<p>Your Guesses So Far: <span id="lettersGuessed"></span></p>
+
+<script type="text/javascript">
+	
+	var guesses = 0;
+
+	var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+	
+	var lettersGuessed = " ";
+
+    var randomNumber = Math.floor(Math.random() * 26);
+	var computerLetter = letters[randomNumber];
+
+	var maxGuesses = 9;
+	var wins = 0;
+	var losses = 0;
+
+	
+
+	document.addEventListener("keypress", letterGuess, letters);
+	function letterGuess() {
+		//If we're out of guesses 
+		if(guesses >= maxGuesses) {
+			//incriment losses and reset game
+			losses++;
+			lettersGuessed = " ";
+			guesses = 0;
+			randomNumber = Math.floor(Math.random() * 26);
+			computerLetter = letters[randomNumber];
+			//If lettersGuessed equals computerLetter add 1 to wins
+		/*else if(computerLetter === lettersGuessed){
+			wins++;
+		  }*/
+		}
+		var x = event.keyCode;               
+    	var currentGuess = String.fromCharCode(x);
+    	lettersGuessed = lettersGuessed + "  " + currentGuess;
+    	document.getElementById("lettersGuessed").innerHTML = lettersGuessed;
+    	guesses++;
+		document.getElementById("numGuessesLeft").innerHTML = maxGuesses - guesses;
+	}
+
+	
+
+
+
+	
+
+
+
+
+</script>
+
+
+</body>
+</html>
