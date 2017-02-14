@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html>
 <head>
 	<title></title>
@@ -32,6 +32,7 @@
 	var wins = 0;
 	var losses = 0;
 	
+	//Wiring up the keypress event
 	document.addEventListener("keypress", letterGuess, letters);
 	function letterGuess() {
 
@@ -43,8 +44,8 @@
 		if(guesses >= maxGuesses) {
 			alert ("You lose!");
 			//incriment losses and reset game
-			document.getElementById("numLosses").innerHTML = losses;
 			losses++;
+			document.getElementById("numLosses").innerHTML = losses;
 			document.getElementById("numGuessesLeft").innerHTML = maxGuesses - guesses;
 			lettersGuessed = " ";
 			guesses = 0;
@@ -53,8 +54,9 @@
 		//If lettersGuessed equals currentGuess add 1 to wins
 		} else if(computerLetter == currentGuess){
 			alert ("You win!");
-			document.getElementById("numWins").innerHTML = wins;
 			wins++;
+			document.getElementById("numWins").innerHTML = wins;
+			
 			
 		}else {
 
@@ -71,12 +73,6 @@
 	}
 
 	
-
-
-
-	
-
-
 
 
 </script>
