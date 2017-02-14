@@ -43,7 +43,9 @@
 		if(guesses >= maxGuesses) {
 			alert ("You lose!");
 			//incriment losses and reset game
+			document.getElementById("numLosses").innerHTML = losses;
 			losses++;
+			document.getElementById("numGuessesLeft").innerHTML = maxGuesses - guesses;
 			lettersGuessed = " ";
 			guesses = 0;
 			randomNumber = Math.floor(Math.random() * 26);
@@ -51,17 +53,21 @@
 		//If lettersGuessed equals currentGuess add 1 to wins
 		} else if(computerLetter == currentGuess){
 			alert ("You win!");
+			document.getElementById("numWins").innerHTML = wins;
 			wins++;
+			
+		}else {
+
 		}          
     	
     	lettersGuessed = lettersGuessed + "  " + currentGuess;
     	document.getElementById("lettersGuessed").innerHTML = lettersGuessed;
     	guesses++;
-		document.getElementById("numGuessesLeft").innerHTML = maxGuesses - guesses;
-		document.getElementById("numWins").innerHTML = wins;
-    	wins++;
-    	document.getElementById("numLosses").innerHTML = losses;
-    	losses++;
+		//document.getElementById("numGuessesLeft").innerHTML = maxGuesses - guesses;
+		//document.getElementById("numWins").innerHTML = wins;
+    	//wins++;
+    	//document.getElementById("numLosses").innerHTML = losses;
+    	//xlosses++;
 	}
 
 	
