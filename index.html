@@ -7,7 +7,7 @@
 
 <h1>Psychic Game</h1>
 
-<p>Guess What Letter I'm Thinking Of</p>
+<p>Guess What Letter I'm Thinking Of '<span id="currentLetterDisplay"></span>'</p>
 
 <p>Wins: <span id="numWins"></span></p>
 
@@ -31,30 +31,37 @@
 	var maxGuesses = 9;
 	var wins = 0;
 	var losses = 0;
-
 	
-
 	document.addEventListener("keypress", letterGuess, letters);
 	function letterGuess() {
+
+		document.getElementById("currentLetterDisplay").innerHTML = computerLetter;
+
+		var currentGuess = String.fromCharCode(event.keyCode);
+
 		//If we're out of guesses 
 		if(guesses >= maxGuesses) {
+			alert ("You lose!");
 			//incriment losses and reset game
 			losses++;
 			lettersGuessed = " ";
 			guesses = 0;
 			randomNumber = Math.floor(Math.random() * 26);
 			computerLetter = letters[randomNumber];
-			//If lettersGuessed equals computerLetter add 1 to wins
-		/*else if(computerLetter === lettersGuessed){
+		//If lettersGuessed equals currentGuess add 1 to wins
+		} else if(computerLetter == currentGuess){
+			alert ("You win!");
 			wins++;
-		  }*/
-		}
-		var x = event.keyCode;               
-    	var currentGuess = String.fromCharCode(x);
+		}          
+    	
     	lettersGuessed = lettersGuessed + "  " + currentGuess;
     	document.getElementById("lettersGuessed").innerHTML = lettersGuessed;
     	guesses++;
 		document.getElementById("numGuessesLeft").innerHTML = maxGuesses - guesses;
+		document.getElementById("numWins").innerHTML = wins;
+    	wins++;
+    	document.getElementById("numLosses").innerHTML = losses;
+    	losses++;
 	}
 
 	
