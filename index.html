@@ -26,7 +26,7 @@
 </div>
 
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-8">
 	 <p class="game-text">Wins: <span id="numWins">0</span></p>
 	 <p class="game-text">Losses: <span id="numLosses">0</span></p>
 	 <p class="game-text">Guesses Left:  <span id="numGuessesLeft"></span></p>	
@@ -34,7 +34,7 @@
   </div>
 
  
-  <div class="col-md-8">
+  <div class="col-md-4">
   	<p id="winMessage" class="game-text"></p> <p id="loseMessage" class="game-text"></p>
   </div>	
 </div>
@@ -72,6 +72,8 @@
 			guesses = 0;
 			randomNumber = Math.floor(Math.random() * 26);
 			computerLetter = letters[randomNumber];
+	
+
 	}
 
 	function letterGuess() {
@@ -81,12 +83,18 @@
 		if(guesses >= maxGuesses) {
 			losses++;
 			document.getElementById("loseMessage").innerHTML = loseMessage;
+			setTimeout(function(){
+    			document.getElementById("loseMessage").innerHTML = '';
+		}, 2000);
 			//incriment losses and reset game
 			resetGame();
 		//If lettersGuessed equals currentGuess add 1 to wins
 		} else if(computerLetter == currentGuess){
 			wins++;
 			document.getElementById("winMessage").innerHTML = winMessage;
+			setTimeout(function(){
+    			document.getElementById("winMessage").innerHTML = '';
+		}, 2000);
 			resetGame();
 		}  else {   
 	    	lettersGuessed = lettersGuessed + "  " + currentGuess;
