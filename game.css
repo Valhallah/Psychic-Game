@@ -1,0 +1,65 @@
+/*html,
+body,
+.view {
+    height: 100%;
+}
+
+.view {
+    background: url("fhttp://wallpaper.pickywallpapers.com/1280x720/purple-nebula.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}*/
+
+.jumbotron {
+	height: 785px;
+	background: url("http://wallpaper.pickywallpapers.com/1280x720/purple-nebula.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	font-family: 'Cabin Sketch', cursive;
+	color: white;
+
+}
+
+.game-title {
+	margin-top: 160px;
+	font-size: 140px;
+	text-align: center;
+}
+
+.game-text {
+	font-family: 'Fauna One', serif;
+	color: #566573;
+}
+
+.col-md-12 {
+	text-align: center;
+	font-size: 50px;
+}
+
+.col-md-7 {
+	font-size: 40px;
+}
+
+.col-md-5 {
+	font-size: 30px;
+	opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
