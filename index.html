@@ -13,10 +13,10 @@
 <link rel="stylesheet" type="text/css" href="game.css">
 </head>
 <body>
-<div class="view">
-	<div class="full-bg-img flex-center">
+
 	<div class="jumbotron">
 		<div class="game-title">Psychic Game</div>
+		<div class="gameButton"><a href="#game">Click Me To Begin</div></a>
 	</div>
 
 <div class="row">
@@ -24,7 +24,7 @@
 	<p class="game-text">Guess What Letter I'm Thinking Of <span id="currentLetterDisplay"></span></p>
   </div>	
 </div>
-
+<a name="game"></a>
 <div class="row">
   <div class="col-md-8">
 	 <p class="game-text">Wins: <span id="numWins">0</span></p>
@@ -37,7 +37,7 @@
   <div class="col-md-4">
   	<p id="winMessage" class="game-text"></p> <p id="loseMessage" class="game-text"></p>
   </div>	
-</div>
+
 
 
 
@@ -85,7 +85,7 @@
 			document.getElementById("loseMessage").innerHTML = loseMessage;
 			setTimeout(function(){
     			document.getElementById("loseMessage").innerHTML = '';
-		}, 2000);
+		}, 3000);
 			//incriment losses and reset game
 			resetGame();
 		//If lettersGuessed equals currentGuess add 1 to wins
@@ -94,7 +94,7 @@
 			document.getElementById("winMessage").innerHTML = winMessage;
 			setTimeout(function(){
     			document.getElementById("winMessage").innerHTML = '';
-		}, 2000);
+		}, 3000);
 			resetGame();
 		}  else {   
 	    	lettersGuessed = lettersGuessed + "  " + currentGuess;
