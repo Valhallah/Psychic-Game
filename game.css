@@ -1,18 +1,4 @@
-/*html,
-body,
-.view {
-    height: 100%;
-}
-
-.view {
-    background: url("fhttp://wallpaper.pickywallpapers.com/1280x720/purple-nebula.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    
-}*/
-
+/*Game intro card*/
 .jumbotron {
 	height: 785px;
 	background: url("http://wallpaper.pickywallpapers.com/1280x720/purple-nebula.jpg") no-repeat center center fixed;
@@ -23,36 +9,41 @@ body,
     background-size: cover;
 	font-family: 'Cabin Sketch', cursive;
 	color: white;
-
 }
 
+/*Game intro text*/
 .game-title {
 	margin-top: 160px;
 	font-size: 140px;
 	text-align: center;
 }
 
+/*Actual game text*/
 .game-text {
 	font-family: 'Fauna One', serif;
 	color: #566573;
 }
 
+/*Game instructions*/
 .col-md-12 {
 	text-align: center;
 	font-size: 50px;
 }
 
+/*Game action*/
 .col-md-8 {
 	height: 240px;
 	font-size: 40px;
 	
 }
 
+/*Win/lose messages*/
 .col-md-4 {
 	opacity: 0.7;
 	font-size: 30px;
 }
 
+/*Navigation to game*/
 .gameButton {
 	margin: 0px auto;
 	text-align: center;

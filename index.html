@@ -16,7 +16,7 @@
 
 	<div class="jumbotron">
 		<div class="game-title">Psychic Game</div>
-		<div class="gameButton"><a href="#game">Click Me To Begin</div></a>
+		<a href="#game"><div class="gameButton">Click Me To Begin</div></a>
 	</div>
 
 <div class="row">
@@ -65,6 +65,7 @@
 	//Wiring up the keypress event
 	document.addEventListener("keypress", letterGuess, letters);
 
+	//Game reset function
 	function resetGame() {
 			document.getElementById("numLosses").innerHTML = losses;
 			document.getElementById("numWins").innerHTML = wins;
@@ -82,15 +83,17 @@
 		//If we're out of guesses 
 		if(guesses >= maxGuesses) {
 			losses++;
+			//Display loseMesage - remove after 3 seconds
 			document.getElementById("loseMessage").innerHTML = loseMessage;
 			setTimeout(function(){
     			document.getElementById("loseMessage").innerHTML = '';
 		}, 3000);
 			//incriment losses and reset game
 			resetGame();
-		//If lettersGuessed equals currentGuess add 1 to wins
+			//If lettersGuessed equals currentGuess add 1 to wins
 		} else if(computerLetter == currentGuess){
 			wins++;
+			//Display winMessage - remove after 3 seconds
 			document.getElementById("winMessage").innerHTML = winMessage;
 			setTimeout(function(){
     			document.getElementById("winMessage").innerHTML = '';
@@ -108,7 +111,5 @@
 	}
 
 </script>
-</div>
-</div>
 </body>
 </html>
